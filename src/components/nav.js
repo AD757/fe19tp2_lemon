@@ -6,14 +6,15 @@ import styled from "styled-components";
 
 const Navigation = styled.header`
   width: 100%;
-  border-bottom: 10px solid #222;
+  // border-bottom: 10px solid #222;
   z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 100px 0;
   height: 100px;
-  background: white;
+  // background: white;
+  
 
 .logo a {
   padding-top: 33px;

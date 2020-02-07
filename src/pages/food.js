@@ -4,7 +4,7 @@ export default class food extends Component {
     render() {
         return (
             <div>
-                FOOD
+                <p>FOOD</p>
             </div>
         )
     }

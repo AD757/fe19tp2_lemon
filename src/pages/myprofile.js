@@ -4,7 +4,7 @@ export default class myprofile extends Component {
     render() {
         return (
             <div>
-                MY PROFILE
+                <p>MY PROFILE</p>
             </div>
         )
     }

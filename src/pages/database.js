@@ -4,7 +4,7 @@ export default class database extends Component {
     render() {
         return (
             <div>
-                DATABASE
+                <p>DATABASE</p>
             </div>
         )
     }

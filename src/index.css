@@ -26,10 +26,17 @@ object {
 body {
   font-family: "Poppins", sans-serif;
   font-size: 1.3rem;
-  background: #fefefe;
+  /* background: #fefefe; */
+  background-image: url(images/bilden.png.png);
 }
 
 h1 {
   font-size: 3em;
   font-weight: 600;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
 }

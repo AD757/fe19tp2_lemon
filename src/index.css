@@ -39,4 +39,5 @@ p {
   display: flex;
   justify-content: center;
   text-decoration: underline;
+  color: rgb(255, 255, 255);
 }

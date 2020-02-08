@@ -10,6 +10,7 @@ import About from "./pages/about";
 import Database from "./pages/database";
 import Profile from "./pages/myprofile";
 import Food from "./pages/food";
+import Login from "./components/login";
 
 
 import "./index.css";
@@ -25,7 +26,7 @@ const App = () => (
             <Route exact path="/database" component={Database} />
             <Route exact path="/myprofile" component={Profile} />
             <Route exact path="/food" component={Food} />
-            
+            <Route exact path="/login" component={Login} />   
         </div>
     </div>
 );

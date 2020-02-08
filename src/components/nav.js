@@ -77,6 +77,13 @@ li {
   justify-content: space-between;
   font-size: 1em;
 }
+
+.loginLi{
+  display:flex;
+  align-items:center;
+  margin-top: 2px;
+  font-size: 0.7em;
+}
 a {
   font-size: 1em;
   text-decoration: none;
@@ -197,6 +204,9 @@ class Nav extends Component {
                         </NavLink>
                         <NavLink activeClassName="active" to="/about">
                             <li>ABOUT</li>
+                        </NavLink>
+                        <NavLink activeClassName="active" to="/login">
+                            <li className="loginLi">Login/Sign up</li>
                         </NavLink>
                     </ul>
                 </nav>

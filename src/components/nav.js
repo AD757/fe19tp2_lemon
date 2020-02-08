@@ -23,6 +23,7 @@ const Navigation = styled.header`
   clear: both;
   padding-bottom: 30px;
   text-decoration: none;
+  color:white;
 
 p {
   width: 200px;
@@ -53,7 +54,7 @@ img {
 }
 a {
   color: #222;
-  opacity: 0.55;
+  // opacity: 0.55;
   transition: all 0.6s;
   color: #222;
   font-size: 1em;
@@ -79,13 +80,14 @@ li {
 a {
   font-size: 1em;
   text-decoration: none;
+  color:white;
 
 .active {
   color: tomato;
 }
 }
 a.active {
-  color: #222;
+  color: #ff64c5;
 }
 }
 

@@ -4,7 +4,7 @@ export default class login extends Component {
     render() {
         return (
             <div>
-                login
+                <p>login</p>
             </div>
         )
     }

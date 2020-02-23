@@ -1,39 +1,34 @@
 import React from "react";
-import { render } from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./css/index.css";
+import App from "./components/App";
 
-// NAVIGATION
-import Nav from "./components/nav.js";
-// PAGES
-// import Home from "./pages/home";
-import About from "./pages/about";
-import Database from "./pages/database";
-import Profile from "./pages/myprofile";
-import Food from "./pages/food";
-import Login from "./components/login";
+// SETTING UP REDUX STORE
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import reduxThunk from "redux-thunk";
+import reducers from "./store/reducers";
+import "react-mdl/extra/material.css";
+import "react-mdl/extra/material.js";
 
-
-import "./index.css";
-
-
-
-const App = () => (
-    <div>
-        <Nav />
-        <div className="container">
-            {/* <Route exact={true} path="/" component={Home} /> */}
-            <Route exaxt path="/about" component={About} />
-            <Route exact path="/database" component={Database} />
-            <Route exact path="/myprofile" component={Profile} />
-            <Route exact path="/food" component={Food} />
-            <Route exact path="/login" component={Login} />   
-        </div>
-    </div>
+// ENHANCING STORE WITH FIREBASE
+import { reactReduxFirebase } from "react-redux-firebase";
+import firebase from "./services/firebase";
+const createStoreWithFirebase = compose(reactReduxFirebase(firebase))(
+  createStore
+);
+const store = createStoreWithFirebase(
+  reducers,
+  {},
+  applyMiddleware(reduxThunk)
 );
 
-render(
+ReactDOM.render(
+  <Provider store={store}>
     <Router>
-        <App />
-    </Router>,
-    document.getElementById("root")
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById("root")
 );

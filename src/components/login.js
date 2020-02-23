@@ -97,8 +97,8 @@ const Login = ({
             ) : newUser ? (
               "Create account"
             ) : (
-                    "Sign in"
-                  )}
+              "Sign in"
+            )}
           </button>
           {!newUser && !reset && (
             <button onClick={() => SetReset(true)} className="btn-link">
@@ -146,7 +146,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

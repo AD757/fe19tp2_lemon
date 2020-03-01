@@ -15,6 +15,13 @@ a {
   text-decoration: none;
 }
 
+.nav-logo {
+  width: 100px;
+}
+.nav-logo-img {
+  width: 100%;
+}
+
 .nav-bar {
   width: 100%;
   background-color: #000;
@@ -25,6 +32,7 @@ a {
 .menu-items {
   display: flex;
   flex: 1;
+  align-items: center;
 }
 
 .menu-item {

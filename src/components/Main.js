@@ -8,7 +8,13 @@ const Main = ({ auth }) => {
   return (
     //added width
     <div>
-      {!auth.isLoaded ? <Loader /> : !auth.isEmpty ? <Home /> : <Login />}
+      {!auth.isLoaded ? (
+        <Loader />
+      ) : !auth.isEmpty ? (
+        <Home email={auth.email} />
+      ) : (
+        <Login />
+      )}
     </div>
   );
 };

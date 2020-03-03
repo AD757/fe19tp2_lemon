@@ -44,13 +44,13 @@ class Search extends React.Component {
             const itemDetails = state.itemDetails.concat({
                value: target.value,
                food_name: identifiedItem.food.food_name,
-               calories: servingsIdentifier.calories,
+               carbohydrate: servingsIdentifier.carbohydrate,
                fat: servingsIdentifier.fat, //grams
                protein: servingsIdentifier.protein //grams
             });
 
             state.pieData.text = identifiedItem.food.food_name;
-            state.pieData.data = [servingsIdentifier.calories, servingsIdentifier.protein, servingsIdentifier.fat];
+            state.pieData.data = [servingsIdentifier.carbohydrate, servingsIdentifier.protein, servingsIdentifier.fat];
 
             return{
                itemDetails
@@ -118,7 +118,7 @@ class Search extends React.Component {
          <div className="foodSearchDiv">
                <input id="foodSearchInput" ref={this.searchRef}></input>
                <button id="foodSearchBtn" onClick={this.searchForFood}>Search for food</button>
-               {this.pieGraph}
+               {/* {this.pieGraph} */}
                {this.state.showFoodList ?
                   <ul className = "foodList">{this.state.food_list}</ul>: null
                }  

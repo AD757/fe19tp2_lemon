@@ -1,44 +1,13 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"); 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-
-html {
-  height: 100%;
-}
-
-img,
-object {
-  display: block;
-  border: 0;
-  max-width: 100%;
-  height: auto;
-}
-
-* {
-  -moz-box-sizing: border-box;
-  -webkit-kit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-}
-
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.3rem;
-  /* background: #fefefe; */
-  background-image: url(images/bilden.png.png);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  font-size: 3em;
-  font-weight: 600;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
-
-p {
-  display: flex;
-  justify-content: center;
-  text-decoration: underline;
-  color: rgb(255, 255, 255);
-}
-

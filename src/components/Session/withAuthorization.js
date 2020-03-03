@@ -36,7 +36,7 @@ const withAuthorization = condition => Component => {
     withRouter,
     withFirebase,
   )(WithAuthorization);
-  return WithAuthorization;
+  
 };
 
 export default withAuthorization;

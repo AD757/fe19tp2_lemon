@@ -33,7 +33,7 @@ const Charts = (props) => {
             },
             legend:{
               display:true,
-              position:'right',
+              position:'bottom',
             },
           }}
         />

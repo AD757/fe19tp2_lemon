@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import fatAPI from '../API';
-import PieChart from '../Charts';
 
 const key = '0a656d2e1070441d81b256544a739083';
 const secret = 'fb94850a73f9420793fe67bb98c77b41';
@@ -24,7 +23,6 @@ class Search extends React.Component {
             data: [1,1,1]
          }
       }
-      this.pieGraph = <PieChart data = {this.state.pieData}/>
    }
 
    ItemClick (e) {
@@ -44,22 +42,20 @@ class Search extends React.Component {
             const itemDetails = state.itemDetails.concat({
                value: target.value,
                food_name: identifiedItem.food.food_name,
-               calories: servingsIdentifier.calories,
+               carbohydrates: servingsIdentifier.carbohydrate,
                fat: servingsIdentifier.fat, //grams
                protein: servingsIdentifier.protein //grams
             });
 
             state.pieData.text = identifiedItem.food.food_name;
-            state.pieData.data = [servingsIdentifier.calories, servingsIdentifier.protein, servingsIdentifier.fat];
+            state.pieData.data = [servingsIdentifier.carbohydrate, servingsIdentifier.protein, servingsIdentifier.fat];
 
             return{
                itemDetails
             }
          })
-         console.log(this.pieGraph)
          this.props.saveFoodData(this.state.pieData);
       })
-      this.forceUpdate();
    }
 
 
@@ -87,7 +83,7 @@ class Search extends React.Component {
                   value = {index} 
                   id = {items.food_id} 
                   key = {items.food_id} 
-                  onClick = {this.ItemClick.bind(this)}>{items.food_name}<button>Add</button>
+                  onClick = {this.ItemClick.bind(this)}>{items.food_name}{/* <button>Add</button> */}
                   </li>)
                console.log(tempArray);
             }
@@ -118,7 +114,6 @@ class Search extends React.Component {
          <div className="foodSearchDiv">
                <input id="foodSearchInput" ref={this.searchRef}></input>
                <button id="foodSearchBtn" onClick={this.searchForFood}>Search for food</button>
-               {this.pieGraph}
                {this.state.showFoodList ?
                   <ul className = "foodList">{this.state.food_list}</ul>: null
                }  

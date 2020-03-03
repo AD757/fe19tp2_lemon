@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Search from '../Search';
 import Charts from '../Charts';
+import TopTenFoods from '../TopTenFoods';
 
 const dummyData = {
-    labels: ['Calories', 'Protein', 'Fat',],
+    labels: ['Carbohydrates', 'Protein', 'Fat',],
     datasets: 
       [{
-        text: 'hej', 
+        text: undefined, 
         label: 'Rainfall',
         backgroundColor: [
           '#B21F00',
@@ -18,15 +19,16 @@ const dummyData = {
         '#4B5000',
         '#175000',
         ],
-        data: [23, 10, 5]
+        data: [undefined]
         }]
       }
 
 class Main extends Component {
-    state={hej: 'bla'}
+    state={
+        
+    }
 
     saveFoodData = (foodData) => {
-
         this.setState({ foodData })
     }
 
@@ -36,8 +38,9 @@ render() {
 }
     return (
         <div>
-        <Search saveFoodData={this.saveFoodData} />
-        {this.state.foodData ? <Charts data={dummyData} text={this.state.foodData.text}/> : null }
+            <Search saveFoodData={this.saveFoodData} />
+            {this.state.foodData ? <Charts data={dummyData} text={this.state.foodData.text}/> : null }
+            <TopTenFoods />
         </div>
     );
 }

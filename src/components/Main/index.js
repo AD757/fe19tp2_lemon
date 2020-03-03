@@ -3,7 +3,7 @@ import Search from '../Search';
 import Charts from '../Charts';
 
 const dummyData = {
-    labels: ['Calories', 'Protein', 'Fat',],
+    labels: ['Carbs', 'Protein', 'Fat',],
     datasets: 
       [{
         text: 'hej', 

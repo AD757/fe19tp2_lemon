@@ -8,7 +8,7 @@ const secret = 'fb94850a73f9420793fe67bb98c77b41';
 const myFatAPI = new fatAPI(key, secret);
 
 class Search extends React.Component {
-   constructor (props) {
+   constructor(props) {
       super(props);
       this.searchForFood = this.searchForFood.bind(this);
       this.searchRef = React.createRef();
@@ -21,50 +21,50 @@ class Search extends React.Component {
          itemDetails: [],
          pieData: {
             text: "hello",
-            data: [1,1,1]
+            data: [1, 1, 1]
          }
       }
-      this.pieGraph = <PieChart data = {this.state.pieData}/>
+      this.pieGraph = <PieChart data={this.state.pieData} />
    }
 
-   ItemClick (e) {
+   ItemClick(e) {
       const target = e.target;
       console.log(target);
       myFatAPI.method('food.get', {
-          food_id: target.id
+         food_id: target.id
       })
-      .then(identifiedItem => {
-         console.log(identifiedItem);
-         console.log(this.state);
-         let servingsIdentifier = identifiedItem.food.servings.serving[0];
-         if(!servingsIdentifier){
-            servingsIdentifier = identifiedItem.food.servings.serving;
-         }
-         this.setState(state => {
-            const itemDetails = state.itemDetails.concat({
-               value: target.value,
-               food_name: identifiedItem.food.food_name,
-               carbohydrate: servingsIdentifier.carbohydrate,
-               fat: servingsIdentifier.fat, //grams
-               protein: servingsIdentifier.protein //grams
-            });
-
-            state.pieData.text = identifiedItem.food.food_name;
-            state.pieData.data = [servingsIdentifier.carbohydrate, servingsIdentifier.protein, servingsIdentifier.fat];
-
-            return{
-               itemDetails
+         .then(identifiedItem => {
+            console.log(identifiedItem);
+            console.log(this.state);
+            let servingsIdentifier = identifiedItem.food.servings.serving[0];
+            if (!servingsIdentifier) {
+               servingsIdentifier = identifiedItem.food.servings.serving;
             }
+            this.setState(state => {
+               const itemDetails = state.itemDetails.concat({
+                  value: target.value,
+                  food_name: identifiedItem.food.food_name,
+                  carbohydrate: servingsIdentifier.carbohydrate,
+                  fat: servingsIdentifier.fat, //grams
+                  protein: servingsIdentifier.protein //grams
+               });
+
+               state.pieData.text = identifiedItem.food.food_name;
+               state.pieData.data = [servingsIdentifier.carbohydrate, servingsIdentifier.protein, servingsIdentifier.fat];
+
+               return {
+                  itemDetails
+               }
+            })
+            console.log(this.pieGraph)
+            this.props.saveFoodData(this.state.pieData);
          })
-         console.log(this.pieGraph)
-         this.props.saveFoodData(this.state.pieData);
-      })
       this.forceUpdate();
    }
 
 
-   searchForFood () {
-
+   searchForFood(e) {
+      e.preventDefault();
       //Skapar en temporär array för att lagra sökningarna i innan de ändras i state
       let tempArray = [];
       const searchValue = this.searchRef.current.value;
@@ -79,49 +79,52 @@ class Search extends React.Component {
             search_expression: this.state.food_search,
             max_results: 10,
          })
-         .then(results => this.setState({resultsArray: results.foods.food}, () => {
-            console.log(this.state.resultsArray);
-            if(this.state.resultsArray !== undefined){ 
-               tempArray = this.state.resultsArray.map((items, index) => <li 
-                  className = "foodListItem"
-                  value = {index} 
-                  id = {items.food_id} 
-                  key = {items.food_id} 
-                  onClick = {this.ItemClick.bind(this)}>{items.food_name}<button>Add</button>
+            .then(results => this.setState({ resultsArray: results.foods.food }, () => {
+               console.log(this.state.resultsArray);
+               if (this.state.resultsArray !== undefined) {
+                  tempArray = this.state.resultsArray.map((items, index) => <li
+                     className="foodListItem"
+                     value={index}
+                     id={items.food_id}
+                     key={items.food_id}
+                     onClick={this.ItemClick.bind(this)}>{items.food_name}<button>Add</button>
                   </li>)
-               console.log(tempArray);
-            }
-         
-         if(this.state.food_list.length === 0){
-            this.setState(state=>{
-               const food_list = state.food_list.concat(tempArray);
-               console.log(food_list);
-               return {
-                  food_list
+                  console.log(tempArray);
                }
-         })}
-         else if(this.state.food_list.length <= 10){
-            this.setState(state=>{
-               const food_list = state.food_list.map((x, i) => x = tempArray[i])
-               console.log(food_list);
-               return{
-                  food_list
+
+               if (this.state.food_list.length === 0) {
+                  this.setState(state => {
+                     const food_list = state.food_list.concat(tempArray);
+                     console.log(food_list);
+                     return {
+                        food_list
+                     }
+                  })
                }
-            })
-         }
-         }))
+               else if (this.state.food_list.length <= 10) {
+                  this.setState(state => {
+                     const food_list = state.food_list.map((x, i) => x = tempArray[i])
+                     console.log(food_list);
+                     return {
+                        food_list
+                     }
+                  })
+               }
+            }))
       })
    }
 
-   render () {
+   render() {
       return (
          <div className="foodSearchDiv">
+            <form onSubmit={this.searchForFood}>
                <input id="foodSearchInput" ref={this.searchRef}></input>
                <button id="foodSearchBtn" onClick={this.searchForFood}>Search for food</button>
-               {/* {this.pieGraph} */}
-               {this.state.showFoodList ?
-                  <ul className = "foodList">{this.state.food_list}</ul>: null
-               }  
+            </form>
+            {/* {this.pieGraph} */}
+            {this.state.showFoodList ?
+               <ul className="foodList">{this.state.food_list}</ul> : null
+            }
          </div>
       );
    }

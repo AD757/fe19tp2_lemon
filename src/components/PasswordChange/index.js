@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { withFirebase } from '../Firebase';
+import React, { Component } from "react";
+import { withFirebase } from "../Firebase";
 
 const INITIAL_STATE = {
-  passwordOne: '',
-  passwordTwo: '',
-  error: null,
+  passwordOne: "",
+  passwordTwo: "",
+  error: null
 };
 
 class PasswordChangeForm extends Component {
@@ -36,31 +36,34 @@ class PasswordChangeForm extends Component {
   render() {
     const { passwordOne, passwordTwo, error } = this.state;
 
-    const isInvalid =
-      passwordOne !== passwordTwo || passwordOne === '';
+    const isInvalid = passwordOne !== passwordTwo || passwordOne === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="New Password"
-        />
-        <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm New Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
-        
-        {error && <p>{error.message}</p>}
-      </form>
+      <div className="main">
+        <form onSubmit={this.onSubmit}>
+          <input
+            className="inputText"
+            name="passwordOne"
+            value={passwordOne}
+            onChange={this.onChange}
+            type="password"
+            placeholder="New Password"
+          />
+          <input
+            className="inputText"
+            name="passwordTwo"
+            value={passwordTwo}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Confirm New Password"
+          />
+          <button className="resetPassBtn" disabled={isInvalid} type="submit">
+            Reset My Password
+          </button>
+
+          {error && <p className="errorMsg">{error.message}</p>}
+        </form>
+      </div>
     );
   }
 }

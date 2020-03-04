@@ -51,7 +51,12 @@
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.04);
 }
 .submitBtn:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  background-color: #044da1;
+}
+.submitBtn:active {
+  background-color: #044da1;
+  transform: translateY(2px);
 }
 
 .resetPassBtn {
@@ -68,8 +73,14 @@
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.04);
 }
 .resetPassBtn:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #044da1;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
+.resetPassBtn:active {
+  background-color: #044da1;
+  transform: translateY(2px);
+}
+
 .errorMsg {
   text-align: center;
   font-size: 12px;

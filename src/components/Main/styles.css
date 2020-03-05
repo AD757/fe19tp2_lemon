@@ -1,0 +1,17 @@
+.mainContent{
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+}
+
+.graphContainer{
+    flex-basis: 30%;
+}
+
+.foodSearchDiv{
+    flex-basis: 30%;
+}
+
+.topTenFoods{
+    flex-basis: 30%;
+}

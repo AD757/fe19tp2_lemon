@@ -1,5 +1,6 @@
 import React from 'react';
 import topTenFoodsList from './topTenFoodsList';
+import './styles.css';
 
 const topTenFoods = () => {
     let tempArray = [];
@@ -7,11 +8,12 @@ const topTenFoods = () => {
     console.log(tempArray);
     return(
         <div className="topTenFoods">
-            <ul>
+            <h2>Most eaten foods</h2>
+            <ol>
                 {tempArray.map((item) =>{  
                     return <li key={item.food.food_id}>{item.food.food_name}</li>;
                     })}
-            </ul>
+            </ol>
         </div>
     )
 }

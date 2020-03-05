@@ -4,47 +4,69 @@ import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
+import styled from 'styled-components'
+
+const UL = styled.ul`
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%
+`
+
+const LI = styled.li`
+    flex-basis: 20%;
+    text-align: center;
+    list-style-type: none;
+    padding-top: 20px;
+    &:hover{
+      background-color: lightgray;
+    }
+`
+
+const NavBar = styled.div`
+    height: 70px;
+`
 
 const Navigation = () => (
-  <div>
+  <NavBar>
     <AuthUserContext.Consumer>
       {authUser =>
         authUser ? <NavigationAuth /> : <NavigationNonAuth />
       }
     </AuthUserContext.Consumer>
-  </div>
+  </NavBar>
 );
 
 
 const NavigationAuth = () => (
-  <ul>
-    <li>
+  <UL>
+    <LI>
       <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
+    </LI>
+    <LI>
       <Link to={ROUTES.HOME}>Home</Link>
-    </li>
-    <li>
+    </LI>
+    <LI>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
-    <li>
+    </LI>
+    <LI>
       <Link to={ROUTES.ADMIN}>Admin</Link>
-    </li>
-    <li>
+    </LI>
+    <LI>
       <SignOutButton />
-    </li>
-  </ul>
+    </LI>
+  </UL>
 );
 
 const NavigationNonAuth = () => (
-  <ul>
-    <li>
+  <UL>
+    <LI>
       <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
+    </LI>
+    <LI>
       <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-  </ul>
+    </LI>
+  </UL>
 );
 
 export default Navigation;

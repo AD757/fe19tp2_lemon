@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import fatAPI from '../API';
+import {FaSearch} from "react-icons/fa";
 
 const key = '0a656d2e1070441d81b256544a739083';
 const secret = 'fb94850a73f9420793fe67bb98c77b41';
@@ -59,8 +60,8 @@ class Search extends React.Component {
    }
 
 
-   searchForFood () {
-
+   searchForFood (e) {
+      e.preventDefault();
       //Skapar en temporär array för att lagra sökningarna i innan de ändras i state
       let tempArray = [];
       const searchValue = this.searchRef.current.value;
@@ -70,7 +71,6 @@ class Search extends React.Component {
          showFoodList: true,
          food_search: searchValue
       }, () => {
-         console.log(this.state.showFoodList);
          myFatAPI.method('foods.search', {
             search_expression: this.state.food_search,
             max_results: 10,
@@ -112,8 +112,12 @@ class Search extends React.Component {
    render () {
       return (
          <div className="foodSearchDiv">
-               <input id="foodSearchInput" ref={this.searchRef}></input>
-               <button id="foodSearchBtn" onClick={this.searchForFood}>Search for food</button>
+            <div className="searchBarDiv">
+               <form onSubmit ={this.searchForFood}>
+                  <input type="text" id="foodSearchInput" ref={this.searchRef}></input>
+                  <FaSearch type="submit" id="foodSearchBtn" onClick={this.searchForFood} />
+               </form>
+            </div>
                {this.state.showFoodList ?
                   <ul className = "foodList">{this.state.food_list}</ul>: null
                }  

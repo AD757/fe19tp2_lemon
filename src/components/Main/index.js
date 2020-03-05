@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Search from '../Search';
 import Charts from '../Charts';
 import TopTenFoods from '../TopTenFoods';
+import './styles.css';
 
 const dummyData = {
     labels: ['Carbohydrates', 'Protein', 'Fat',],
@@ -37,9 +38,10 @@ render() {
     dummyData.datasets[0].data = this.state.foodData.data;
 }
     return (
-        <div>
+        <div className = "mainContent">
+
+            {this.state.foodData ? <div className = "graphContainer"><Charts data={dummyData} text={this.state.foodData.text}/></div> : null }
             <Search saveFoodData={this.saveFoodData} />
-            {this.state.foodData ? <Charts data={dummyData} text={this.state.foodData.text}/> : null }
             <TopTenFoods />
         </div>
     );

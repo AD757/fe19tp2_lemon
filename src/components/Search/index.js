@@ -26,40 +26,6 @@ class Search extends React.Component {
       }
    }
 
-   ItemClick (e) {
-      const target = e.target;
-      console.log(target);
-      myFatAPI.method('food.get', {
-          food_id: target.id
-      })
-      .then(identifiedItem => {
-         console.log(identifiedItem);
-         console.log(this.state);
-         let servingsIdentifier = identifiedItem.food.servings.serving[0];
-         if(!servingsIdentifier){
-            servingsIdentifier = identifiedItem.food.servings.serving;
-         }
-         this.setState(state => {
-            const itemDetails = state.itemDetails.concat({
-               value: target.value,
-               food_name: identifiedItem.food.food_name,
-               carbohydrates: servingsIdentifier.carbohydrate,
-               fat: servingsIdentifier.fat, //grams
-               protein: servingsIdentifier.protein //grams
-            });
-
-            state.pieData.text = identifiedItem.food.food_name;
-            state.pieData.data = [servingsIdentifier.carbohydrate, servingsIdentifier.protein, servingsIdentifier.fat];
-
-            return{
-               itemDetails
-            }
-         })
-         this.props.saveFoodData(this.state.pieData);
-      })
-   }
-
-
    searchForFood (e) {
       e.preventDefault();
       //Skapar en temporär array för att lagra sökningarna i innan de ändras i state
@@ -83,7 +49,7 @@ class Search extends React.Component {
                   value = {index} 
                   id = {items.food_id} 
                   key = {items.food_id} 
-                  onClick = {this.ItemClick.bind(this)}>{items.food_name}{/* <button>Add</button> */}
+                  onClick = {this.props.ItemClick.bind(this)}>{items.food_name}{/* <button>Add</button> */}
                   </li>)
                console.log(tempArray);
             }

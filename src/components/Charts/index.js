@@ -21,6 +21,11 @@ const Charts = (props) => {
             },
           }}
         />
+        <h3>Amount: {props.foodInfo.amount}{props.foodInfo.unit}</h3>
+        <h3>Calories: {props.foodInfo.calories}kcal</h3>
+        <h3>Carbohydrates: {props.foodInfo.carbohydrates}g</h3>
+        <h3>Fat: {props.foodInfo.fat}g</h3>
+        <h3>Protein: {props.foodInfo.protein}g</h3>
       </div>
     )
 }

@@ -47,7 +47,7 @@ class PasswordForgetFormBase extends Component {
     return (
       <div className="main">
         <h2 className="bevTitle">B.E.V</h2>
-        <h1 className="sign">Password Forget</h1>
+        <h1 className="sign">Forgot Password</h1>
         <form onSubmit={this.onSubmit}>
           <input
             className="inputText"

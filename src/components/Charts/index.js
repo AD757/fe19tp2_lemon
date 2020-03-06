@@ -1,5 +1,6 @@
 import React from 'react';
 import {Pie} from 'react-chartjs-2';
+import { FaLastfmSquare } from 'react-icons/fa';
 
 const Charts = (props) => {
     return(
@@ -10,6 +11,7 @@ const Charts = (props) => {
           height={300}
           options={{ 
             maintainAspectRatio: false,
+            responsive: false,
             title:{
               display:true,
               text: props.text,

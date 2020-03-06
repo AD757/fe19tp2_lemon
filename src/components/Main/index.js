@@ -43,6 +43,7 @@ class Main extends Component {
         console.log(itemDetails);
         this.setState({ foodData, itemDetails })
     }
+    
     ItemClick = (e) => {
         console.log(this)
         const target = e.target;
@@ -51,9 +52,9 @@ class Main extends Component {
             food_id: target.id
         })
             .then(identifiedItem => {
-                console.log(identifiedItem)
+                console.log(identifiedItem);
                 let servingsIdentifier = identifiedItem.food.servings.serving[0];
-                console.log(servingsIdentifier)
+                console.log(servingsIdentifier);
                 if (!servingsIdentifier) {
                     servingsIdentifier = identifiedItem.food.servings.serving;
                 }

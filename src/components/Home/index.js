@@ -13,6 +13,6 @@ const HomePage = () => (
 const condition = authUser => !!authUser;
 
 export default compose(
-  withEmailVerification,
+  /*   withEmailVerification, */
   withAuthorization(condition),
 )(HomePage);

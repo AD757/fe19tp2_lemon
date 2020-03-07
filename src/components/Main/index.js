@@ -45,16 +45,13 @@ class Main extends Component {
     }
     
     ItemClick = (e) => {
-        console.log(this)
         const target = e.target;
         console.log("ID: " + e.target.id)
         myFatAPI.method('food.get', {
             food_id: target.id
         })
             .then(identifiedItem => {
-                console.log(identifiedItem);
                 let servingsIdentifier = identifiedItem.food.servings.serving[0];
-                console.log(servingsIdentifier);
                 if (!servingsIdentifier) {
                     servingsIdentifier = identifiedItem.food.servings.serving;
                 }
@@ -70,12 +67,14 @@ class Main extends Component {
                         amount: servingsIdentifier.metric_serving_amount,
                         unit: servingsIdentifier.metric_serving_unit
                     }
-                    state.pieData.text = identifiedItem.food.food_name;
-                    state.pieData.data = [servingsIdentifier.carbohydrate, servingsIdentifier.protein, servingsIdentifier.fat];
+                    state.pieData = {
+                        text: identifiedItem.food.food_name,
+                        data: [servingsIdentifier.carbohydrate, servingsIdentifier.protein, servingsIdentifier.fat]
+                    }
                 })
                 this.saveFoodData(this.state.pieData, this.state.itemDetails);
             })
-    }
+        }
 
 
 

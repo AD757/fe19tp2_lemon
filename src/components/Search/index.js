@@ -13,68 +13,33 @@ class Search extends React.Component {
       this.searchForFood = this.searchForFood.bind(this);
       this.searchRef = React.createRef();
       this.state = {
-         data: null,
-         food_list: [],
          resultsArray: [],
-         showFoodList: false,
-         food_search: '',
-         itemDetails: [],
-         pieData: {
-            text: "hello",
-            data: [1, 1, 1]
-         }
+         showFoodList: false
       }
    }
 
    searchForFood(e) {
       e.preventDefault();
       //Skapar en temporär array för att lagra sökningarna i innan de ändras i state
-      let tempArray = [];
       const searchValue = this.searchRef.current.value;
 
       //showComponent visar/"skapar" ul som returneras längre ner i App, food_search sätter värdet till det som står i text inputen
-      this.setState({
-         showFoodList: true,
-         food_search: searchValue
-      }, () => {
          myFatAPI.method('foods.search', {
-            search_expression: this.state.food_search,
-            max_results: 10,
+            search_expression: searchValue,
+            max_results: 10
          })
-            .then(results => this.setState({ resultsArray: results.foods.food }, () => {
-               console.log(this.state.resultsArray);
-               if (this.state.resultsArray !== undefined) {
-                  tempArray = this.state.resultsArray.map((items, index) => <li
-                     className="foodListItem"
-                     value={index}
-                     id={items.food_id}
-                     key={items.food_id}
-                     onClick={(e) => this.props.ItemClick(e)}>{items.food_name}{/* <button>Add</button> */}
-                  </li>)
-                  console.log(tempArray);
+            .then(results => {
+               console.log(results);
+               if(!results.foods){
+                  return;
                }
-
-               if (this.state.food_list.length === 0) {
-                  this.setState(state => {
-                     const food_list = state.food_list.concat(tempArray);
-                     console.log(food_list);
-                     return {
-                        food_list
-                     }
+               else if(results.foods.food){
+                  this.setState({ 
+                     resultsArray: results.foods.food,
+                     showFoodList: true
                   })
-               }
-               else if (this.state.food_list.length <= 10) {
-                  this.setState(state => {
-                     const food_list = state.food_list.map((x, i) => x = tempArray[i])
-                     console.log(food_list);
-                     return {
-                        food_list
-                     }
-                  })
-               }
-            }))
-      })
-   }
+               }})
+            }
 
    render() {
       return (
@@ -86,7 +51,13 @@ class Search extends React.Component {
                </form>
             </div>
             {this.state.showFoodList ?
-               <ul className="foodList">{this.state.food_list}</ul> : null
+               <ul className="foodList">{this.state.resultsArray.map((items, index) => <li
+                  className="foodListItem"
+                  value={index}
+                  id={items.food_id}
+                  key={items.food_id}
+                  onClick={(e) => this.props.ItemClick(e)}>{items.food_name}
+               </li>)}</ul> : null
             }
          </div>
       );

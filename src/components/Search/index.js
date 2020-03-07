@@ -13,8 +13,7 @@ class Search extends React.Component {
       this.searchForFood = this.searchForFood.bind(this);
       this.searchRef = React.createRef();
       this.state = {
-         resultsArray: [],
-         showFoodList: false
+         resultsArray: []
       }
    }
 
@@ -35,8 +34,7 @@ class Search extends React.Component {
                }
                else if(results.foods.food){
                   this.setState({ 
-                     resultsArray: results.foods.food,
-                     showFoodList: true
+                     resultsArray: results.foods.food
                   })
                }})
             }
@@ -50,7 +48,7 @@ class Search extends React.Component {
                   <FaSearch type="submit" id="foodSearchBtn" onClick={this.searchForFood} />
                </form>
             </div>
-            {this.state.showFoodList ?
+            {this.state.resultsArray ?
                <ul className="foodList">{this.state.resultsArray.map((items, index) => <li
                   className="foodListItem"
                   value={index}

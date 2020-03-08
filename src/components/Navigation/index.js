@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
-import { AuthUserContext } from '../Session';
+// import { AuthUserContext } from '../Session';
 import styled from 'styled-components'
 
 const UL = styled.ul`
@@ -49,13 +49,13 @@ const NavigationAuth = () => (
     </LI>
     <LI>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
-    {authUser.roles.includes(ROLES.ADMIN) && (
-      <li>
+    </LI>
+    {/* {authUser.roles.includes(ROLES.ADMIN) && (
+      <LI>
         <Link to={ROUTES.ADMIN}>Admin</Link>
-      </li>
-    )}
-    <li>
+      </LI>
+    )} */}
+    <LI>
       <SignOutButton />
     </LI>
   </UL>

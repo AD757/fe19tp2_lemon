@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
-// import { AuthUserContext } from '../Session';
 import styled from 'styled-components'
 
 const UL = styled.ul`

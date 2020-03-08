@@ -16,12 +16,14 @@ class ConstructedMeal extends React.Component{
     }
 
     addCurrentFood = () => {
-        this.setState(state=>{
-            const mealPlan = state.mealPlan.concat(this.props.itemDetails)
-            return{
-                mealPlan
-            };
-        });
+        if(this.props.itemDetails){
+            this.setState(state=>{
+                const mealPlan = state.mealPlan.concat(this.props.itemDetails)
+                return{
+                    mealPlan
+                };
+            });
+        }
     };
 
     returnFoodValue = (foodProperty) => {
@@ -37,19 +39,18 @@ class ConstructedMeal extends React.Component{
         return(
             <div className="constructedMeal">
                 <h4>Construct a meal</h4>
-                {this.state.mealPlan ? 
-                    <ul className="mealList">
-                        {this.state.mealPlan.map((items, index) => <li
-                            className="mealItem"
-                            key={index}
-                            >{items.food_name}</li>)
-                        }
-                    </ul>: null}
-                    <button onClick={this.addCurrentFood}>Add current food</button>
-                    <h5>Total calories: {this.returnFoodValue('calories')}kcal</h5>
-                    <h5>Total carbs: {this.returnFoodValue('carbohydrates')}g</h5>
-                    <h5>Total fat: {this.returnFoodValue('fat')}g</h5>
-                    <h5>Total protein: {this.returnFoodValue('protein')}g</h5>
+                <ul className="mealList">
+                    {this.state.mealPlan.map((items, index) => <li
+                        className="mealItem"
+                        key={index}
+                        >{items.food_name}</li>)
+                    }
+                </ul>
+                <button onClick={this.addCurrentFood}>Add current food</button>
+                <h5>Total calories: {this.returnFoodValue('calories')}kcal</h5>
+                <h5>Total carbs: {this.returnFoodValue('carbohydrates')}g</h5>
+                <h5>Total fat: {this.returnFoodValue('fat')}g</h5>
+                <h5>Total protein: {this.returnFoodValue('protein')}g</h5>
             </div>
         )
     }

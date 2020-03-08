@@ -31,7 +31,7 @@ const Charts = (props) => {
              },
               display:true,
               position:'bottom',
-            },
+            }
           }}
         />
         <h3>Amount: {amountOfFood}{props.foodInfo.unit}</h3>

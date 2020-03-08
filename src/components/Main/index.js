@@ -6,8 +6,6 @@ import fatAPI from '../API';
 import ConstructedMeal from '../ConstructedMeal';
 import './styles.css';
 
-import { makeChartData } from './makeData';
-
 const key = '0a656d2e1070441d81b256544a739083';
 const secret = 'fb94850a73f9420793fe67bb98c77b41';
 const myFatAPI = new fatAPI(key, secret);

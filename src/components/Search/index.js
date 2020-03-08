@@ -21,23 +21,22 @@ class Search extends React.Component {
       e.preventDefault();
       //Skapar en temporär array för att lagra sökningarna i innan de ändras i state
       const searchValue = this.searchRef.current.value;
-
-      //showComponent visar/"skapar" ul som returneras längre ner i App, food_search sätter värdet till det som står i text inputen
-         myFatAPI.method('foods.search', {
-            search_expression: searchValue,
-            max_results: 10
-         })
-            .then(results => {
-               console.log(results);
-               if(!results.foods){
-                  return;
-               }
-               else if(results.foods.food){
-                  this.setState({ 
-                     resultsArray: results.foods.food
-                  })
-               }})
+      myFatAPI.method('foods.search', {
+         search_expression: searchValue,
+         max_results: 10
+      })
+      .then(results => {
+         console.log(results);
+         if(!results.foods){
+            return;
             }
+            else if(results.foods.food){
+               this.setState({ 
+                  resultsArray: results.foods.food
+               })
+            }
+         })
+      }
 
    render() {
       return (

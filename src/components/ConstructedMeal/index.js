@@ -24,6 +24,10 @@ class ConstructedMeal extends React.Component{
         });
     };
 
+    deleteFoodItem = (e) => {
+        console.log(e.target.parentNode)
+    }
+
     returnFoodValue = (foodProperty) => {
         let tempValue = 0;
         this.state.mealPlan.forEach(item => {
@@ -42,7 +46,10 @@ class ConstructedMeal extends React.Component{
                         {this.state.mealPlan.map((items, index) => <li
                             className="mealItem"
                             key={index}
-                            >{items.food_name}</li>)
+                            value={index}
+                            >{items.food_name}
+                            <button onClick={this.deleteFoodItem}>Delete</button>
+                            </li>)
                         }
                     </ul>: null}
                     <button onClick={this.addCurrentFood}>Add current food</button>

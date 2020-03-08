@@ -1,18 +1,15 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { compose } from "recompose";
-
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+// import { PasswordForgetForm } from "../PasswordForget";
 
 const SignInPage = () => (
-  <div>
+  <div className="main">
     <SignInForm />
-    <SignInGoogle />
-    <SignInFacebook />
-    <SignInTwitter />
     <PasswordForgetLink />
     <SignUpLink />
   </div>
@@ -67,10 +64,15 @@ class SignInFormBase extends Component {
     const isInvalid = password === "" || email === "";
 
     return (
-      <div className="main">
+      <div>
         <h2 className="bevTitle">B.E.V</h2>
         <h1 className="sign">Sign in</h1>
+        <SignInGoogle />
+        <SignInFacebook />
+        <SignInTwitter />
+
         <form onSubmit={this.onSubmit}>
+          <div className="or"> or </div>
           <input
             className="inputText"
             name="email"
@@ -92,8 +94,6 @@ class SignInFormBase extends Component {
           </button>
           {error && <p className="errorMsg">{error.message}</p>}
         </form>
-        <PasswordForgetLink />
-        <SignUpLink />
       </div>
     );
   }
@@ -137,7 +137,9 @@ class SignInGoogleBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Google</button>
+        <button className="submitBtn google" type="submit">
+          Sign In with Google
+        </button>
 
         {error && <p>{error.message}</p>}
       </form>
@@ -183,7 +185,9 @@ class SignInFacebookBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Facebook</button>
+        <button className="submitBtn fb" type="submit">
+          Sign In with Facebook
+        </button>
 
         {error && <p>{error.message}</p>}
       </form>
@@ -229,7 +233,9 @@ class SignInTwitterBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Twitter</button>
+        <button className="submitBtn tweet" type="submit">
+          Sign In with Twitter
+        </button>
 
         {error && <p>{error.message}</p>}
       </form>

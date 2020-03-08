@@ -1,6 +1,8 @@
 import React from 'react';
 import {Pie} from 'react-chartjs-2';
 
+import './style.css';
+
 const Charts = (props) => {
   let amountOfFood = props.foodInfo.amount;
   console.log(amountOfFood);
@@ -21,8 +23,12 @@ const Charts = (props) => {
               display:true,
               text: props.text,
               fontSize: 40,
+              fontColor: 'brown',
             },
             legend:{
+              labels: {
+                fontColor: 'brown' //set your desired color
+             },
               display:true,
               position:'bottom',
             },

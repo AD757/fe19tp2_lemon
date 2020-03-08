@@ -3,6 +3,7 @@ import Search from '../Search';
 import Charts from '../Charts';
 import TopTenFoods from '../TopTenFoods';
 import fatAPI from '../API';
+import ConstructedMeal from '../ConstructedMeal';
 import './styles.css';
 
 const key = '0a656d2e1070441d81b256544a739083';
@@ -40,7 +41,6 @@ class Main extends Component {
     }
 
     saveFoodData = (foodData, itemDetails) => {
-        console.log(itemDetails);
         this.setState({ foodData, itemDetails })
     }
     
@@ -90,6 +90,7 @@ class Main extends Component {
                 </div> : null}
                 <Search saveFoodData={this.saveFoodData} ItemClick={this.ItemClick} />
                 <TopTenFoods ItemClick={this.ItemClick} />
+                <ConstructedMeal itemDetails={this.state.itemDetails} />
             </div>
         );
     }

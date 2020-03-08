@@ -1,0 +1,19 @@
+.constructedMeal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #dfcaca;
+    height: fit-content;
+    width: 25%; 
+    padding-bottom: 15px;
+}
+
+h5{
+    flex-basis: 100%;
+    text-align: center;
+    margin: 3px;
+}
+
+ul{
+    flex-basis: 100%;
+}

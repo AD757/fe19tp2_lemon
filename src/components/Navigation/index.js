@@ -1,9 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
+import * as ROLES from "../../constants/roles";
 import styled from 'styled-components'
 
 const UL = styled.ul`
@@ -22,6 +23,7 @@ const LI = styled.li`
       background-color: lightgray;
     }
 `;
+
 
 const NavBar = styled.div`
     height: 70px;

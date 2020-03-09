@@ -1,0 +1,118 @@
+.main {
+  background-color: #ffffff;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px 0 20px 0;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+  padding-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: #2cb84a;
+}
+
+.inputText {
+  width: 300px;
+  color: rgb(38, 50, 56);
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid #2cb84a;
+  margin: 10px 50px 0px 50px;
+  text-align: center;
+}
+
+.inputText:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+.or {
+  color: rgba(0, 0, 0, 0.18);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submitBtn {
+  cursor: pointer;
+  border-radius: 8px;
+  width: 220px;
+  color: #fff;
+  /* background: linear-gradient(to right, #2cb84a, #008899); */
+  background-color: #2cb84a;
+  border: 0;
+  padding: 10px 20px;
+  width: 300px;
+  margin: 10px 50px 0 50px;
+  font-size: 14px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.04);
+}
+
+.fb {
+  background-color: #0f58ac;
+  margin-top: 8px;
+}
+
+.google {
+  background-color: #e23d3d;
+}
+.tweet {
+  background-color: #44d3f6;
+  margin-top: 8px;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* background: linear-gradient(to right, #2cb84a, #008899); */
+}
+.submitBtn:active {
+  background-color: #047a22;
+  transform: translateY(2px);
+}
+
+.resetPassBtn {
+  cursor: pointer;
+  border-radius: 8px;
+  width: 220px;
+  color: #fff;
+  /* background: linear-gradient(to right, #2cb84a, #008899); */
+  background-color: #2cb84a;
+  border: 0;
+  padding: 10px 20px;
+  width: 300px;
+  margin: 10px 50px 0 50px;
+  font-size: 14px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.04);
+}
+.resetPassBtn:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.resetPassBtn:active {
+  background-color: #047a22;
+  transform: translateY(2px);
+}
+
+.errorMsg {
+  text-align: center;
+  font-size: 12px;
+  color: #ff0000;
+}
+
+.forgotPass {
+  font-size: 12px;
+  text-align: center;
+}
+
+.bevTitle {
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 44px;
+}

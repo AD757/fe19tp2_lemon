@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../constants/routes';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { withFirebase } from "../Firebase";
+import * as ROUTES from "../../constants/routes";
 
 const PasswordForgetPage = () => (
   <div>
-    <h1>PasswordForget</h1>
     <PasswordForgetForm />
   </div>
 );
 
 const INITIAL_STATE = {
-  email: '',
-  error: null,
+  email: "",
+  error: null
 };
 
 class PasswordForgetFormBase extends Component {
@@ -45,29 +43,34 @@ class PasswordForgetFormBase extends Component {
   render() {
     const { email, error } = this.state;
 
-    const isInvalid = email === '';
+    const isInvalid = email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
+      <div className="main">
+        <h2 className="bevTitle">B.E.V</h2>
+        <h1 className="sign">Forgot Password</h1>
+        <form onSubmit={this.onSubmit}>
+          <input
+            className="inputText"
+            name="email"
+            value={this.state.email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Type your email address"
+          />
+          <button className="resetPassBtn" disabled={isInvalid} type="submit">
+            Reset my password
+          </button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+          {error && <p className="errorMsg">{error.message}</p>}
+        </form>
+      </div>
     );
   }
 }
 
 const PasswordForgetLink = () => (
-  <p>
+  <p className="forgotPass">
     <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
   </p>
 );

@@ -1,6 +1,5 @@
-import React from 'react';
-import Main from '../Main';
-import './styles.css';
+import React from "react";
+import Main from "../Main";
 
 const Landing = () => (
   <div className = "landingPage">

@@ -44,7 +44,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.LANDING);
       })
       .catch(error => {
         this.setState({ error });
@@ -66,12 +66,12 @@ class SignInFormBase extends Component {
       <div>
         <h2 className="bevTitle">B.E.V</h2>
         <h1 className="sign">Sign in</h1>
-       <SignInGoogle />
+        {/* <SignInGoogle />
         <SignInFacebook />
-        <SignInTwitter />
+        <SignInTwitter /> */}
 
         <form onSubmit={this.onSubmit}>
-          <div className="or"> or </div>
+          {/* <div className="or"> or </div> */}
           <input
             className="inputText"
             name="email"

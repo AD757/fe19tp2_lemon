@@ -21,3 +21,16 @@ h2 {
     flex-basis: 100%;
     text-align: center;
 }
+
+.topTenFoods {
+    min-width: 280px;
+    max-width: 300px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+    .topTenFoods {
+      margin-top: 10px;
+      margin-left: 13px;
+    }
+  }

@@ -52,13 +52,10 @@ const NavBar = styled.div`
 const Navigation = () => (
   <NavBar>
     <AuthUserContext.Consumer>
-      {authUser =>
-        authUser ? <NavigationAuth /> : <NavigationNonAuth />
-      }
+      {authUser => (authUser ? <NavigationAuth /> : <NavigationNonAuth />)}
     </AuthUserContext.Consumer>
   </NavBar>
 );
-
 
 const NavigationAuth = () => (
   <UL>

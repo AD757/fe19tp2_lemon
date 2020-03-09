@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
     "chart.js": "^2.9.3",
+    "chartjs-plugin-datalabels": "^0.7.0",
     "firebase": "^7.9.3",
     "firebase-admin": "^8.9.2",
     "react": "^16.13.0",

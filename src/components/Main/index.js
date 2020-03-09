@@ -5,6 +5,9 @@ import TopTenFoods from '../TopTenFoods';
 import fatAPI from '../API';
 import ConstructedMeal from '../ConstructedMeal';
 import './styles.css';
+import { compose } from "recompose";
+
+import { withAuthorization } from "../Session";
 
 const key = '0a656d2e1070441d81b256544a739083';
 const secret = 'fb94850a73f9420793fe67bb98c77b41';
@@ -102,4 +105,9 @@ class Main extends Component {
     }
 }
 
-export default Main;
+
+const condition = authUser => !!authUser;
+export default compose(
+    /*   withEmailVerification, */
+    withAuthorization(condition)
+  )(Main);

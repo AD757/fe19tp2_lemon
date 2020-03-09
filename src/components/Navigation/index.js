@@ -60,11 +60,11 @@ const Navigation = () => (
 const NavigationAuth = () => (
   <UL>
     <LI>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+      <Link to={ROUTES.LANDING}>Home</Link>
     </LI>
-    <LI>
-      <Link to={ROUTES.HOME}>Home</Link>
-    </LI>
+    {/* <LI>
+      <Link to={ROUTES.HOME}>Home Remove</Link>
+    </LI> */}
     <LI>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
     </LI>
@@ -82,7 +82,7 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
   <UL>
     <LI>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+      <Link to={ROUTES.LANDING}>Home</Link>
     </LI>
     <LI>
       <Link to={ROUTES.SIGN_IN}>Sign In</Link>

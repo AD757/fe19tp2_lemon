@@ -8,26 +8,46 @@ import * as ROLES from "../../constants/roles";
 import styled from 'styled-components'
 
 const UL = styled.ul`
-    margin: 0;
     padding: 0;
+    margin: 0;
+    text-align: center;
     display: flex;
-    height: 100%
-`;
+    vertical-align: top;
+    justify-content: space-evenly;
+    align-items: left;
+    font-family: "Montserrat", sans-serif;
+`
 
 const LI = styled.li`
-    flex-basis: 20%;
-    text-align: center;
-    list-style-type: none;
-    padding-top: 20px;
-    &:hover{
-      background-color: lightgray;
-    }
-`;
+  position: relative;
+  top: 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  width:100%;
+  background: #2cb84a;
+`
 
 
 const NavBar = styled.div`
-    height: 70px;
-`;
+    height: 55px;
+    a {
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    text-transform: uppercase;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 35px;
+  }
+
+  a:hover {
+   color: white;
+   font-size: 17px;
+   text-shadow: 2px 2px 5px gray;
+  
+  }
+`
 
 const Navigation = () => (
   <NavBar>

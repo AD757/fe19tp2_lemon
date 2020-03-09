@@ -16,10 +16,8 @@ import "../css/styles.css";
 
 const App = () => (
   <Router>
-    <div>
+    <div className="appRouter">
       <Navigation />
-
-      <hr />
 
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />

@@ -1,0 +1,36 @@
+ol{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    justify-content: center;
+    padding: 0;
+}
+
+ol li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    flex-basis: 80%;
+    margin-top: 3px;
+    background-color: #e6e6e6;
+}
+
+h2 {
+    margin-top: 0;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.topTenFoods {
+    min-width: 280px;
+    max-width: 300px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+    .topTenFoods {
+      margin-top: 10px;
+      margin-left: 13px;
+    }
+  }

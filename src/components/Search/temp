@@ -1,0 +1,50 @@
+   searchForFood(e) {
+      e.preventDefault();
+      //Skapar en temporär array för att lagra sökningarna i innan de ändras i state
+      let tempArray = [];
+      const searchValue = this.searchRef.current.value;
+
+      //showComponent visar/"skapar" ul som returneras längre ner i App, food_search sätter värdet till det som står i text inputen
+      this.setState({
+         showFoodList: true,
+         food_search: searchValue
+      }, () => {
+         console.log(this.state.showFoodList);
+         myFatAPI.method('foods.search', {
+            search_expression: this.state.food_search,
+            max_results: 10,
+         })
+            .then(results => this.setState({ resultsArray: results.foods.food }, () => {
+               console.log(this.state.resultsArray);
+               if (this.state.resultsArray !== undefined) {
+                  tempArray = this.state.resultsArray.map((items, index) => <li
+                     className="foodListItem"
+                     value={index}
+                     id={items.food_id}
+                     key={items.food_id}
+                     onClick={this.ItemClick.bind(this)}>{items.food_name}<button>Add</button>
+                  </li>)
+                  console.log(tempArray);
+               }
+
+               if (this.state.food_list.length === 0) {
+                  this.setState(state => {
+                     const food_list = state.food_list.concat(tempArray);
+                     console.log(food_list);
+                     return {
+                        food_list
+                     }
+                  })
+               }
+               else if (this.state.food_list.length <= 10) {
+                  this.setState(state => {
+                     const food_list = state.food_list.map((x, i) => x = tempArray[i])
+                     console.log(food_list);
+                     return {
+                        food_list
+                     }
+                  })
+               }
+            }))
+      })
+   }

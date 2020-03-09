@@ -1,0 +1,12 @@
+.pieGraph {
+    max-width: 300px;
+    background-color: lightcoral;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+h3 {
+    color: brown;
+    display: flex;
+    justify-content: center;
+}

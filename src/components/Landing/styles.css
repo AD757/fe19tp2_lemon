@@ -1,0 +1,11 @@
+.landingPage{
+    display: flex;
+    flex-wrap: wrap;
+    height: 800px;
+}
+
+h1{
+    flex-basis: 100%;
+    text-align: center;
+    height: auto;
+}

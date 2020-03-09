@@ -86,14 +86,18 @@ class Main extends Component {
         }
 
         return (
-            <div className="mainContent">
+        <div className="mainContent">
+            <span className='chartsSearch'>
                 {this.state.foodData ? <div className="graphContainer">
                     <Charts data={dummyData} text={this.state.foodData.text} foodInfo={this.state.itemDetails} />
                 </div> : null}
                 <Search saveFoodData={this.saveFoodData} ItemClick={this.ItemClick} />
-                <TopTenFoods ItemClick={this.ItemClick} />
+            </span>
+            <div className='conTopTen'>    
                 <ConstructedMeal itemDetails={this.state.itemDetails} />
+                <TopTenFoods ItemClick={this.ItemClick} />
             </div>
+        </div>    
         );
     }
 }

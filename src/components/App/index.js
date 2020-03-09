@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Navigation from '../Navigation';
@@ -23,9 +23,9 @@ const App = () => (
       <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
       <Route
-        exact
+      
         path={ROUTES.PASSWORD_FORGET}
-        component={PasswordForgetPage}
+        ccomponent={PasswordForgetPage}
       />
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />

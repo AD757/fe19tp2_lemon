@@ -1,11 +1,13 @@
 .mainContent{
     display: flex;
     flex-basis: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .graphContainer{
     flex-basis: 30%;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .foodSearchDiv{

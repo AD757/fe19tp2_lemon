@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
-import { AuthUserContext } from '../Session';
 import styled from 'styled-components'
 
 const UL = styled.ul`
@@ -11,7 +11,7 @@ const UL = styled.ul`
     padding: 0;
     display: flex;
     height: 100%
-`
+`;
 
 const LI = styled.li`
     flex-basis: 20%;
@@ -21,11 +21,11 @@ const LI = styled.li`
     &:hover{
       background-color: lightgray;
     }
-`
+`;
 
 const NavBar = styled.div`
     height: 70px;
-`
+`;
 
 const Navigation = () => (
   <NavBar>
@@ -49,9 +49,11 @@ const NavigationAuth = () => (
     <LI>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
     </LI>
-    <LI>
-      <Link to={ROUTES.ADMIN}>Admin</Link>
-    </LI>
+    {/* {authUser.roles.includes(ROLES.ADMIN) && (
+      <LI>
+        <Link to={ROUTES.ADMIN}>Admin</Link>
+      </LI>
+    )} */}
     <LI>
       <SignOutButton />
     </LI>

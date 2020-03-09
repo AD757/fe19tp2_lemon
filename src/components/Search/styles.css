@@ -24,11 +24,11 @@
   .foodList li:hover{
     background-color: #cacaca;
   }
-
+/* 
   form{
     height: 35px;
     display: flex;
-  }
+  } */
 
   .searchBarDiv{
     position: relative;

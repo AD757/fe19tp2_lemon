@@ -19,16 +19,16 @@ const config = {
   messagingSenderId: "50310492607",
 };
 
-const new_config = {
-  apiKey: "AIzaSyCUz3QOf7zB7Z-mccF4AuvduME2yX4ud_o",
-  authDomain: "fe19tp2-lemon.firebaseapp.com",
-  databaseURL: "https://fe19tp2-lemon.firebaseio.com",
-  projectId: "fe19tp2-lemon",
-  storageBucket: "fe19tp2-lemon.appspot.com",
-  messagingSenderId: "275910465912",
-  appId: "1:275910465912:web:929bcf50e38c6e7919d08d",
-  measurementId: "G-9JKPQ6C9XY"
-};
+// const new_config = {
+//   apiKey: "AIzaSyCUz3QOf7zB7Z-mccF4AuvduME2yX4ud_o",
+//   authDomain: "fe19tp2-lemon.firebaseapp.com",
+//   databaseURL: "https://fe19tp2-lemon.firebaseio.com",
+//   projectId: "fe19tp2-lemon",
+//   storageBucket: "fe19tp2-lemon.appspot.com",
+//   messagingSenderId: "275910465912",
+//   appId: "1:275910465912:web:929bcf50e38c6e7919d08d",
+//   measurementId: "G-9JKPQ6C9XY"
+// };
 
 class Firebase {
   constructor() {
@@ -37,7 +37,6 @@ class Firebase {
     //this.emailAuthProvider = app.auth.emailAuthProvider;
     this.auth = app.auth();
     this.db = app.database();
-
   }
 
   // *** Auth API ***

@@ -19,7 +19,7 @@ const config = {
   messagingSenderId: "50310492607",
 };
 
-const new_config = {
+/*const new_config = {
   apiKey: "AIzaSyCUz3QOf7zB7Z-mccF4AuvduME2yX4ud_o",
   authDomain: "fe19tp2-lemon.firebaseapp.com",
   databaseURL: "https://fe19tp2-lemon.firebaseio.com",
@@ -28,7 +28,7 @@ const new_config = {
   messagingSenderId: "275910465912",
   appId: "1:275910465912:web:929bcf50e38c6e7919d08d",
   measurementId: "G-9JKPQ6C9XY"
-};
+};*/
 
 class Firebase {
   constructor() {

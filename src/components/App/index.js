@@ -16,7 +16,7 @@ import "../css/styles.css";
 
 const App = () => (
   <Router>
-    <div className="appRouter">
+    <div>
       <Navigation />
 
       <Route exact path={ROUTES.LANDING} component={LandingPage} />

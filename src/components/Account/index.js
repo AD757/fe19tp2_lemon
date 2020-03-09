@@ -4,7 +4,6 @@ import { compose } from "recompose";
 import {
   AuthUserContext,
   withAuthorization,
-  withEmailVerification
 } from "../Session";
 import { withFirebase } from "../Firebase";
 import PasswordChangeForm from "../PasswordChange";

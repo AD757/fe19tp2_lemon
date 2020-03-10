@@ -1,56 +1,29 @@
-.mainContent{
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-    justify-content: space-evenly;
-    justify-self: center;
-    align-content: center;
-    /* min-width: 500px; */
-}
-
-.graphContainer{
-    flex-basis: 30%;
-    max-width: 300px;
-    max-height: 550px;
-}
-
-.foodSearchDiv{
-    flex-basis: 30%;
-    height: 300px;;
-}
-
-.topTenFoods{
-    flex-basis: 30%;
-    height: 500px;
+.mainContent {
+  /* min-width: 500px; */
+  max-width: 600px;
+  margin: 32px auto;
 }
 
 .conTopTen {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  margin-top: 25px;
 }
 
 .chartsSearch {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
+  /* width: 600px; */
 }
 
 @media only screen and (max-width: 600px) {
-    .conTopTen {
-      margin-top: 210px;
-      max-width: 300px;
-      flex-wrap: wrap;
-    }
-
-    .chartsSearch {
-        max-width: 300px;
-        flex-wrap: wrap;
-    }
-
-    .foodSearchDiv {
-        margin-left: 12px;
-    }
+  .conTopTen {
+    display: block;
   }
 
+  .chartsSearch {
+    max-width: 300px;
+    flex-wrap: wrap;
+  }
+
+  .foodSearchDiv {
+    margin-left: 12px;
+  }
+}

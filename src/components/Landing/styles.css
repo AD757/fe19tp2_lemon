@@ -1,11 +1,24 @@
-.landingPage{
-    display: flex;
-    flex-wrap: wrap;
-    height: 800px;
+.landingPage {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-h1{
-    flex-basis: 100%;
-    text-align: center;
-    height: auto;
+h1 {
+  text-align: center;
+  margin: 32px;
+  font-weight: normal;
+  color: #2cb84a;
+}
+
+h2 {
+  font-weight: normal;
+  color: #2cb84a;
+  margin: 0;
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 600px) {
+  .landingPage {
+    padding: 8px;
+  }
 }

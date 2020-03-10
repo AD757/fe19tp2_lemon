@@ -1,46 +1,55 @@
-import React from 'react';
-import {Pie} from 'react-chartjs-2';
+import React from "react";
+import { Pie } from "react-chartjs-2";
 
-import './style.css';
+import "./style.css";
+import { FaCentercode } from "react-icons/fa";
 
-const Charts = (props) => {
+const Charts = props => {
   let amountOfFood = props.foodInfo.amount;
   console.log(amountOfFood);
-  if(amountOfFood.endsWith(".000")){
-    amountOfFood = amountOfFood.substring(0, amountOfFood.length - 4)
+  if (amountOfFood.endsWith(".000")) {
+    amountOfFood = amountOfFood.substring(0, amountOfFood.length - 4);
   }
   console.log(amountOfFood);
-    return(
-      <div className="pieGraph">
-        <Pie 
-          data = {props.data}
-          width={300}
-          height={300}
-          options={{ 
-            maintainAspectRatio: false,
-            responsive: false,
-            title:{
-              display:true,
-              text: props.text,
-              fontSize: 40,
-              fontColor: 'brown',
+  return (
+    <div className="pieGraph">
+      <Pie
+        data={props.data}
+        width={350}
+        height={350}
+        options={{
+          maintainAspectRatio: false,
+          responsive: false,
+          title: {
+            display: true,
+            text: props.text,
+            fontSize: 22,
+            fontColor: "#2cb84a",
+            fontStyle: "normal"
+          },
+          legend: {
+            labels: {
+              fontColor: "black", //set your desired color
+              fontSize: 12
             },
-            legend:{
-              labels: {
-                fontColor: 'brown' //set your desired color
-             },
-              display:true,
-              position:'bottom',
-            }
-          }}
-        />
-        <h3>Amount: {amountOfFood}{props.foodInfo.unit}</h3>
-        <h3>Calories: {props.foodInfo.calories}kcal</h3>
-        <h3>Carbohydrates: {props.foodInfo.carbohydrates}g</h3>
-        <h3>Fat: {props.foodInfo.fat}g</h3>
-        <h3>Protein: {props.foodInfo.protein}g</h3>
+            display: true,
+            position: "bottom"
+          }
+        }}
+      />
+
+      <div className="factsInfo">
+        <h2>
+          Amount: {amountOfFood}
+          {props.foodInfo.unit}
+        </h2>
+        <p>Calories: {props.foodInfo.calories}kcal</p>
+        <p>Carbohydrates: {props.foodInfo.carbohydrates}g</p>
+        <p>Fat: {props.foodInfo.fat}g</p>
+        <p>Protein: {props.foodInfo.protein}g</p>
       </div>
-    )
-}
+    </div>
+  );
+};
 
 export default Charts;

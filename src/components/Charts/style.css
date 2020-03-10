@@ -1,12 +1,30 @@
 .pieGraph {
-    max-width: 300px;
-    background-color: lightcoral;
-    border: 1px solid black;
-    border-radius: 20px;
+  border-radius: 8px;
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 32px;
 }
 
-h3 {
-    color: brown;
-    display: flex;
-    justify-content: center;
+.factsInfo {
+  color: #000;
+  margin-top: 8px;
+}
+
+.factsInfo p {
+  margin: 8px 8px 8px 0;
+}
+
+h4 {
+  text-align: center;
+  margin: 0;
+}
+
+canvas h1 {
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 600px) {
+  .pieGraph {
+    display: block;
+  }
 }

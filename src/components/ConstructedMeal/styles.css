@@ -1,33 +1,71 @@
-.constructedMeal{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #1ca700;
-    height: fit-content;
-    max-width: 250px;
-    min-width: 200px; 
-    max-height: 394px;
-    padding-bottom: 15px;
-    margin-top: 80px;
-    overflow: scroll;
-    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.14);
+.constructedMeal {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 10px;
 }
 
-h5{
-    flex-basis: 100%;
-    text-align: center;
-    margin: 3px;    
+h5 {
+  text-align: center;
+  margin: 3px;
 }
 
-ul{
-    flex-basis: 100%;
+.constructedMeal > div {
+  padding: 12px 12px 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.constructedMeal > div:last-child {
+  border-bottom: none;
+}
+
+.mealList {
+  margin: 0;
+  padding: 0;
+}
+
+.mealItem {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.mealName {
+  flex: 1;
+}
+
+.mealItem .btn {
+  width: 100px;
+}
+.btnDelete {
+  cursor: pointer;
+  border-radius: 8px;
+  width: 80px;
+  color: #fff;
+  /* background: linear-gradient(to right, #2cb84a, #008899); */
+  background-color: #2cb84a;
+  border: 0;
+  padding: 8px 8px;
+  margin: 16px 0;
+  font-size: 14px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.04);
+}
+.btn {
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  color: #fff;
+  /* background: linear-gradient(to right, #2cb84a, #008899); */
+  background-color: #2cb84a;
+  border: 0;
+  padding: 10px 20px;
+  margin: 16px 0;
+  font-size: 14px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.04);
 }
 
 @media only screen and (max-width: 600px) {
-    .constructedMeal {
-      margin-top: 10px;
-      margin-left: 26px;
-      display: flex;
-      justify-content: center;
-    }
+  .constructedMeal {
+    margin-top: 24px;
   }
+}

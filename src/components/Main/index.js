@@ -62,7 +62,8 @@ class Main extends Component {
             fat: servingsIdentifier.fat, //grams
             protein: servingsIdentifier.protein, //grams
             amount: servingsIdentifier.metric_serving_amount,
-            unit: servingsIdentifier.metric_serving_unit
+            unit: servingsIdentifier.metric_serving_unit,
+            description: servingsIdentifier.serving_description
           };
           state.pieData = {
             text: identifiedItem.food.food_name,

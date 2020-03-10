@@ -7,8 +7,12 @@ import { FaCentercode } from "react-icons/fa";
 const Charts = props => {
   let amountOfFood = props.foodInfo.amount;
   console.log(amountOfFood);
-  if (amountOfFood.endsWith(".000")) {
-    amountOfFood = amountOfFood.substring(0, amountOfFood.length - 4);
+  if (amountOfFood) {
+    if (amountOfFood.endsWith(".000")) {
+      amountOfFood = amountOfFood.substring(0, amountOfFood.length - 4);
+    }
+  } else if (!amountOfFood) {
+    amountOfFood = props.foodInfo.description;
   }
   console.log(amountOfFood);
   return (

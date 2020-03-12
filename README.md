@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 # Demo
-![Demo](https://i.imgur.com/aXecORa.gifv)
+![](https://i.imgur.com/aXecORa.gif)
 
 
 ## Available Scripts

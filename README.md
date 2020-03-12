@@ -2,9 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## Screenshots
-![Image](https://i.imgur.com/Pxgwl1L.png)
-![Image](https://i.imgur.com/Abr4HXO.png)
-![Image](https://i.imgur.com/ISHaQRj.png)
+![Image](https://i.imgur.com/XMguyjU.jpg)
+![Image](https://i.imgur.com/dwi1kmB.jpg)
+![Image](https://i.imgur.com/PJMRlYP.jpg)
 
 ## Available Scripts
 

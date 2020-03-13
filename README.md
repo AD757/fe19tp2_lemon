@@ -7,8 +7,8 @@ A nutrition tracking application that provides nutritional data.
 ![](https://i.imgur.com/aXecORa.gif)
 
 ## Setup
-$ npm install
-$ npm start
+*  npm install
+*  npm start
 
 ## Authors
 [Alladin Daher](https://github.com/ad757)

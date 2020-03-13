@@ -10,6 +10,10 @@ A nutrition tracking application that provides nutritional data.
 *  npm install
 *  npm start
 
+## Trello
+
+https://trello.com/b/6Q4fJ0lD/fe19tp2lemon
+
 ## Authors
 [Alladin Daher](https://github.com/ad757)
 
